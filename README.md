@@ -56,3 +56,7 @@ bot_settings:
   discord_token:        - Discord bot token obtained during step two of setup
 log_level:              - Log verbosity, https://docs.python.org/3/howto/logging.html
 ```
+## Troubleshooting
+### Discord Module Import Fails on Bot Instantiation
+For whatever reason, the discord module may not require the "actually required" version of aiohttp. To resolve this, use the following pip3 command to install the necessary version:
+```pip3 install "aiohttp==3.8.0"```
