@@ -21,8 +21,9 @@ At a primative level the bot can be run by executing [src/run.py](src/run.py) wi
 Installation steps (Verified stable on Kali 2021.4)
 1. Execute scripts/setup.sh to build the bot into your local Linux environment
 2. Setup a discord developer account to obtain a bot token. The following is a good guide for doing this: https://www.youtube.com/watch?v=ibtXXoMxaho
-3. Set the bot token in /etc/config/bits/config.yaml
-4. Restart the bot using sytemctl, if the configuration was taken and the bot was restarted succesfully, you should see a log of success in /var/log/bits/bits.log as well as a number of Discord API calls.
+3. Start the bot if not already started. It will crash due to not having a token but will populate the empty config file.
+4. Set the bot token in /etc/config/bits/config.yaml
+5. Restart the bot using sytemctl, if the configuration was taken and the bot was restarted succesfully, you should see a log of success in /var/log/bits/bits.log as well as a number of Discord API calls.
 
 ### Scripts
 ```
@@ -34,6 +35,7 @@ bash scripts/purge.sh
 ```
 sudo systemctl status bits
 sudo systemctl start bits
+sudo systemctl stop bits
 sudo systemctl restart bits
 sudo systemctl enable bits
 sudo systemctl disable bits
